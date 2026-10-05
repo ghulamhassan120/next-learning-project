@@ -1,5 +1,9 @@
 'use client'
+
+import { useRouter } from "next/navigation";
+
 const NotFound = () => {
+  const router = useRouter()
   return (
     <main className="flex min-h-screen items-center justify-center bg-slate-950 px-6">
       <div className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-white/10 bg-white/[0.05] p-10 text-center shadow-2xl backdrop-blur-xl sm:p-16">
@@ -31,6 +35,7 @@ const NotFound = () => {
 
             <a
               href="/"
+              onClick={()=>router.back()}
               className="rounded-xl bg-white px-6 py-3 font-semibold text-slate-900 shadow-lg transition hover:-translate-y-1 hover:bg-slate-100"
             >
               ← Back to Home
